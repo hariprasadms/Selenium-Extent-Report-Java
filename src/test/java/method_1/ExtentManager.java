@@ -1,4 +1,4 @@
-package hari.hari.report;
+package method_1;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;

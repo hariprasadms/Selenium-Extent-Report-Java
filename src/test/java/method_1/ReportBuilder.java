@@ -1,4 +1,4 @@
-package hari.hari.report;
+package method_1;
 
 import java.lang.reflect.Method;
 
@@ -20,7 +20,7 @@ public class ReportBuilder {
 	
 	@BeforeSuite
 	public void beforeSuite() {
-		extent = ExtentManager.createInstance("./test-output/extent-report.html");
+		extent = ExtentManager.createInstance("extent-report.html");
 	}
 	
 	@BeforeClass

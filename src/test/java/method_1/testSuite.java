@@ -1,4 +1,4 @@
-package hari.hari.report;
+package method_1;
 
 import java.io.IOException;
 
@@ -13,43 +13,41 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class testSuite extends ReportBuilder {
 
-	
 	@Test
-	public  void Test1() {
-		
+	public void Test1() {
+
 		System.out.println("Pass");
-		
+
 	}
-		
+
 	@Test
-	public  void Test2() {
-		
-		System.out.println("Pass");
-	}
-	
-	@Test
-	public  void Test3() {
-		
+	public void Test2() {
+
 		System.out.println("Pass");
 	}
-	
+
 	@Test
-	public  void Test4() {
-		
+	public void Test3() {
+
+         Assert.assertEquals(true, false);
+	}
+
+	@Test
+	public void Test4() {
+
 		System.out.println("Pass");
 	}
-	
+
 	@Test
-	public  void Test5() {
-		
+	public void Test5() {
+
 		System.out.println("Pass");
 	}
-	
+
 	@Test
-	public  void Test6() {
-		
-		System.out.println("Pass");
+	public void Test6() {
+
+		 Assert.assertEquals(true, false);
 	}
-	
 
 }
