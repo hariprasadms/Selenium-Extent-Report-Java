@@ -1,19 +1,20 @@
 package method_1;
 
 import java.io.IOException;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.MediaEntityBuilder;
-import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class testSuite extends ReportBuilder {
 
 	@Test
 	public void Test1() {
 
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://katalon-demo-cura.herokuapp.com/");
 		System.out.println("Pass");
 
 	}
