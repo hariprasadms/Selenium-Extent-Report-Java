@@ -1,4 +1,4 @@
-package method_1;
+package com.sdetexperts.framework_base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;

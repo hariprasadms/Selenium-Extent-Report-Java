@@ -1,7 +1,7 @@
-package method_1;
+package com.sdetexperts.reportutils;
 
 import java.lang.reflect.Method;
-
+import com.sdetexperts.framework_base.Base;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;

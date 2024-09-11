@@ -1,13 +1,11 @@
-package method_1;
-
-import java.io.IOException;
-
+package com.sdetexperts.test_scripts;
+import com.sdetexperts.reportutils.ReportBuilder;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class testSuite extends ReportBuilder {
+public class TestSuite extends ReportBuilder {
 
 	@Test
 	public void Test1() {
