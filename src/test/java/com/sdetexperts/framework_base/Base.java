@@ -245,13 +245,13 @@ public class Base {
         Set<String> windowIterator = driver.getWindowHandles();
         System.out.println("No of Windows" +windowIterator.size());
         for (String s : windowIterator) {
-            String windowHandle =s;
-            popup = driver.switchTo().window(windowHandle);
-            if (popup.getTitle().equalsIgnoreCase(title)){
+            popup = driver.switchTo().window(s);
+            if (Objects.requireNonNull(popup.getTitle()).equalsIgnoreCase(title)){
                 System.out.println("The Selected window Title" + popup.getTitle());
                 return popup;
             }
         }
+        assert popup != null;
         System.out.println("The Window Title:" + popup.getTitle());
         return popup;
     }
@@ -260,8 +260,8 @@ public class Base {
 
         String parentWindowHandle = driver.getWindowHandle();
         WebDriver popup =null;
-        for(String windowHanle: driver.getWindowHandles()) {
-            popup= driver.switchTo().window(windowHanle);
+        for(String windowHandle: driver.getWindowHandles()) {
+            popup= driver.switchTo().window(windowHandle);
             System.out.println("The visible window Title " + popup.getTitle());
         }
         driver.switchTo().window(parentWindowHandle);
@@ -290,8 +290,7 @@ public class Base {
         final String alphanumeric = "ABCDEFG0123456789";
         final int n= alphanumeric.length();
         Random r = new Random();
-        String randomString  = Character.toString(alphanumeric.charAt(r.nextInt(n)));
-        return randomString;
+        return Character.toString(alphanumeric.charAt(r.nextInt(n)));
     }
 
     public String getCurrentPageURL () {
@@ -334,13 +333,13 @@ public class Base {
             executor.executeScript("arguments[0].value='" + valueToEnter + "';", new Object[] { objName });
             System.out.println("Entering value '" + valueToEnter + "' in '" + objNameStr + " is successfull");
         } catch (Exception ex) {
-            scrollintoview(objName);
+            scrollIntoView(objName);
             executor.executeScript("arguments[0].value='" + valueToEnter + "';", new Object[] { objName });
             System.out.println("Entering value '" + valueToEnter + "' in '" + objNameStr + " is successfull");
         }
     }
 
-    public void scrollintoview(WebElement e) {
+    public void scrollIntoView(WebElement e) {
         try {
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", new Object[] { e });
         } catch (Exception ex) {
@@ -362,8 +361,7 @@ public class Base {
 
     public void isTabEnabled(String objectNameString, WebElement objectName) {
         try {
-            WebElement link =objectName ;
-            String linkClass = link.getAttribute("class");
+            String linkClass = objectName.getAttribute("class");
             if ("active".equals(linkClass)) {
                 System.out.println("The Link/Tab" +objectNameString + "appeard to be Active or Enabled State");
             }
@@ -378,8 +376,7 @@ public class Base {
     public static void isLinkDisabled (String objectNameString, WebElement objectName) throws Exception {
 
         try{
-            WebElement link =objectName ;
-            String linkClass =link.getAttribute("class");
+            String linkClass = objectName.getAttribute("class");
             if ("inactive".equals(linkClass))
                 System.out.println("The link appears to be Inactive or Disabled Mode");
             else
@@ -429,7 +426,7 @@ public class Base {
 
     public boolean isElementPresent(String objectNameString, WebElement objectName){
 
-        Boolean flag =false;
+        boolean flag =false;
 
         if (objectName.isDisplayed()){
             System.out.println("verified" +objectNameString + "is Displayed");
@@ -446,10 +443,10 @@ public class Base {
         }
     }
 
-    public void verfiyWindowTitle (String expectedTitle){
+    public void verifyWindowsTitle (String expectedTitle){
         try {
-            //Assert.assertEquals(expectedTitle,getTitleOfPage());
-            /*getTitleOfPage().equalsIgnoreCase(expectedTitle);*/
+
+            Assert.assertEquals(expectedTitle,getTitleOfPage());
             System.out.println("The Actual tile " +getTitleOfPage()+ "matched with Expected");
         } catch (Exception e) {
             System.out.println("The Expected title" + expectedTitle+ "is not matched with the Actual and the Actual one is" + getTitleOfPage());
@@ -474,7 +471,7 @@ public class Base {
 
     public void dismissAlertBox(){
         driver.switchTo().alert().dismiss();
-        System.out.println("Alert is dissmissed");
+        System.out.println("Alert is dismissed");
     }
 
     public boolean isAlertPresent () {

@@ -1,5 +1,5 @@
 package com.sdetexperts.test_scripts;
-import com.sdetexperts.Pages.LoginPage;
+import com.sdetexperts.pages.LoginPage;
 import com.sdetexperts.reportutils.ReportBuilder;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
