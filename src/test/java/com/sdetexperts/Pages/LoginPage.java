@@ -1,5 +1,4 @@
-package com.sdetexperts.pages;
-
+package com.sdetexperts.Pages;
 import com.sdetexperts.framework_base.Base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
