@@ -1,3 +1,5 @@
-/Users/ptstesting/basic-extentreport/src/test/java/method_1/ReportBuilder.java
-/Users/ptstesting/basic-extentreport/src/test/java/method_1/testSuite.java
-/Users/ptstesting/basic-extentreport/src/test/java/method_1/ExtentManager.java
+/Users/hariprasadms/IdeaProjects/Extent-Report/src/test/java/com/sdetexperts/demo_tests/TestDemo.java
+/Users/hariprasadms/IdeaProjects/Extent-Report/src/test/java/com/sdetexperts/reportutils/ExtentManager.java
+/Users/hariprasadms/IdeaProjects/Extent-Report/src/test/java/com/sdetexperts/reportutils/ReportBuilder.java
+/Users/hariprasadms/IdeaProjects/Extent-Report/src/test/java/com/sdetexperts/test_scripts/LoginTest.java
+/Users/hariprasadms/IdeaProjects/Extent-Report/src/test/java/com/sdetexperts/test_scripts/TestSuite.java
